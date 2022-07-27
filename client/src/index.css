@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
+:root {
+    /* dark shades of primary color*/
+    --clr-primary-1: #4657da;
+    --clr-primary-2: #3744a9;
+    --clr-primary-3: #2f3a91;
+    /* primary/main color */
+    --clr-primary-4: #4e61f2;
+    /* lighter shades of primary color */
+    --clr-primary-5: #6071f3;
+    --clr-primary-6: #8390f6;
+    --clr-primary-7: #a7b0f9;
+
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(212, 33%, 89%);
+    --clr-grey-2: hsl(210, 31%, 80%);
+    --clr-grey-3: hsl(211, 27%, 70%);
+    --clr-grey-4: hsl(209, 23%, 60%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 28%, 39%);
+    --clr-grey-7: hsl(209, 34%, 30%);
+    --clr-grey-8: hsl(211, 39%, 23%);
+    --clr-grey-9: hsl(209, 61%, 16%);
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --transition: all 0.2s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    --max-width: 1170px;
+    --fixed-width: 450px;
+    --clr-pink: #f28ab2;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+body {
+    background: var(--clr-white);
+    color: var(--clr-grey-9);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: var(--spacing);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4 {
+    font-size: 0.875rem;
+}
+p {
+    margin-bottom: 1.25rem;
+    color: var(--clr-grey-6);
+    font-weight: 500;
+}
+
+.btn {
+    border: none;
+    outline: none;
+}
+.section-center {
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+    height: 100%;
+}
+.section-title {
+    text-transform: capitalize;
+}
+.section-subtitle {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: var(--clr-grey-5);
+}
+.btn-primary {
+    width: max-content;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--clr-white);
+    background-color: var(--clr-primary-5);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn-primary-sm {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    margin: 0.5rem 0;
+    background: var(--clr-primary-4);
+}
+.btn-primary svg {
+    font-size: 1.65rem;
+    margin-left: 10px;
+}
+.btn-primary:hover {
+    background-color: var(--clr-primary-2);
+}
+
+.loading {
+    width: 100vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;
+    height: 5rem;
+    margin-top: 3rem;
+}
+
+.loading .bar {
+    width: 1.7rem;
+    height: 5rem;
+    background-color: var(--clr-primary-4);
+}
+
+.bar-one {
+    animation: bar1 1s linear infinite;
+}
+.bar-two {
+    animation: bar2 1s linear infinite;
+}
+.bar-three {
+    animation: bar3 1s linear infinite;
+}
+
+@keyframes bar1 {
+    33% {
+        height: 0;
+    }
+
+    0% {
+        height: 5rem;
+    }
+}
+@keyframes bar2 {
+    66% {
+        height: 0rem;
+    }
+    33% {
+        height: 5rem;
+    }
+}
+@keyframes bar3 {
+    99% {
+        height: 0;
+    }
+    66% {
+        height: 5rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    body {
+        font-size: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        line-height: 1;
+    }
+    .section {
+        margin-top: 70px;
+        min-height: calc(100vh - 80px);
+    }
+    .section-center {
+        width: 80%;
+        margin: 0 auto;
+    }
+    main {
+        margin-top: 80px;
+    }
+}
