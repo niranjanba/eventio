@@ -37,6 +37,7 @@ function App() {
                     }
                 />
                 <Route path="/event/:eventId" element={<SingleEvent />} />
+                <Route path="*" element={<Error />} />
             </Routes>
         </Router>
     );
